@@ -1,0 +1,240 @@
+.animated-perfume-banner {
+  min-height: 700px;
+  position: relative;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+}
+
+.banner-slider-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+  min-height: 700px;
+}
+
+.banner-slide {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  min-height: 700px;
+}
+
+.animated-perfume-banner .banner-container {
+  width: 50%;
+  padding-block: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animated-perfume-banner .slider-content-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  max-width: 525px;
+  padding-left: 100px;
+}
+
+.animated-perfume-banner .heading-style-2 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 60px;
+  margin-bottom: 30px;
+}
+
+.animated-perfume-banner .description-text {
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 35px;
+  margin-bottom: 28px;
+}
+
+.animated-perfume-banner .slider-images {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.animated-perfume-banner .slider-image {
+  max-width: 593px;
+  max-height: 600px;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
+  transition: transform 0.5s ease;
+}
+
+.banner-slide:hover .slider-image {
+  transform: scale(1.05);
+}
+
+.slider-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.slider-control:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+}
+
+.slider-control.prev {
+  left: 30px;
+}
+
+.slider-control.next {
+  right: 30px;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.slider-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+
+.slider-dots .dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.slider-dots .dot.active {
+  background: #fff;
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 1199px) {
+  .animated-perfume-banner .heading-style-2 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .animated-perfume-banner .slider-content-wrap {
+    padding-left: 60px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .animated-perfume-banner .heading-style-2 {
+    font-size: 35px;
+    line-height: 45px;
+  }
+
+  .animated-perfume-banner .description-text {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .animated-perfume-banner .slider-content-wrap {
+    padding-left: 40px;
+  }
+
+  .animated-perfume-banner .slider-image {
+    max-height: 500px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .animated-perfume-banner {
+    min-height: 800px;
+  }
+
+  .banner-slider-wrapper {
+    min-height: 800px;
+  }
+
+  .banner-slide {
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 800px;
+    padding-top: 60px;
+  }
+
+  .animated-perfume-banner .banner-container {
+    width: 100%;
+    padding-block: 40px;
+  }
+
+  .animated-perfume-banner .slider-content-wrap {
+    padding-left: 0;
+    padding: 0 40px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .animated-perfume-banner .slider-images {
+    width: 100%;
+    height: 400px;
+  }
+
+  .animated-perfume-banner .slider-image {
+    max-height: 380px;
+  }
+
+  .slider-control.prev {
+    left: 10px;
+  }
+
+  .slider-control.next {
+    right: 10px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .animated-perfume-banner .heading-style-2 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .animated-perfume-banner .description-text {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .animated-perfume-banner .slider-content-wrap {
+    padding: 0 20px;
+  }
+
+  .animated-perfume-banner .slider-image {
+    max-height: 300px;
+  }
+}
