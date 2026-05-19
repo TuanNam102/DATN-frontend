@@ -38,7 +38,7 @@ const Home = () => {
   const [direction, setDirection] = useState(0);
   const [activeTab, setActiveTab] = useState(productTabs[0]);
   const [quickView, setQuickView] = useState<Product | null>(null);
-  const [showNewsletterPopup, setShowNewsletterPopup] = useState(false);
+
   const [selectedVariant, setSelectedVariant] = useState("50ml");
   const [quantity, setQuantity] = useState(1);
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -122,10 +122,7 @@ const Home = () => {
     return { days, hours, mins, secs };
   };
 
-  useEffect(() => {
-    const popupTimer = window.setTimeout(() => setShowNewsletterPopup(true), 2500);
-    return () => window.clearTimeout(popupTimer);
-  }, []);
+
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -615,22 +612,6 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-[#111] text-white">
-        <div className="max-w-[820px] mx-auto px-4 text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-white/55 mb-5">Bản Tin</p>
-          <h2 className="text-4xl md:text-6xl  font-heading font-medium mb-8">Tham gia cộng đồng yêu hương thơm</h2>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              placeholder="Nhập email của bạn"
-              className="flex-1 h-12 rounded-full bg-white/10 border border-white/20 px-5 outline-none"
-            />
-            <button className="h-12 px-8 rounded-full bg-white text-black text-xs uppercase tracking-[0.2em] hover:bg-white/80">
-              Đăng ký
-            </button>
-          </div>
-        </div>
-      </section>
 
       <AnimatePresence>
         {quickView && (
@@ -696,42 +677,7 @@ const Home = () => {
         )}
       </AnimatePresence>
 
-      <AnimatePresence>
-        {showNewsletterPopup && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[65] bg-black/40 p-4 flex items-center justify-center"
-          >
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 20, opacity: 0 }}
-              className="w-full max-w-[580px] rounded-2xl bg-[#131313] text-white p-7 relative border border-white/15"
-            >
-              <button
-                onClick={() => setShowNewsletterPopup(false)}
-                className="absolute top-3 right-3 w-8 h-8 rounded-full border border-white/20 text-white/75"
-              >
-                ×
-              </button>
-              <p className="text-xs uppercase tracking-[0.25em] text-white/60 mb-4">Đăng ký nhận tin</p>
-              <h3 className="text-3xl md:text-4xl  font-heading font-medium">Giảm 10% cho đơn hàng đầu tiên</h3>
-              <div className="mt-6 flex flex-col sm:flex-row gap-2">
-                <input
-                  type="email"
-                  placeholder="Email của bạn"
-                  className="flex-1 h-11 rounded-full bg-white/10 border border-white/20 px-4 outline-none"
-                />
-                <button className="h-11 px-6 rounded-full bg-white text-black text-xs uppercase tracking-[0.2em]">
-                  Đăng ký
-                </button>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
     </main>
   );
 };

@@ -42,20 +42,20 @@ const instagramImages = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[#F37021] pt-12 border-t border-gray-100">
+    <footer className="bg-[#111111] border-t border-white/10">
       {/* Instagram Feed */}
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 mb-12">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="font-heading font-medium text-2xl italic text-white">Instagram Feed</h2>
-          <a href="#" className="text-[10px] uppercase tracking-widest border-b border-white pb-1 hover:text-black transition-colors text-white">Follow @AventisStore</a>
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 py-6">
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="text-[10px] uppercase tracking-[0.2em] font-medium text-white/60">Instagram</h2>
+          <a href="#" className="text-[10px] uppercase tracking-[0.15em] text-white/40 hover:text-[#F37021] transition-colors">@AventisStore</a>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+        <div className="grid grid-cols-6 gap-1.5">
           {instagramImages.map((img, idx) => (
-            <div key={idx} className="aspect-square rounded-2xl overflow-hidden group cursor-pointer">
+            <div key={idx} className="h-[100px] rounded overflow-hidden group cursor-pointer">
               <img 
                 src={img} 
                 alt={`Instagram ${idx}`} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100" 
               />
             </div>
           ))}
@@ -63,48 +63,51 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Links */}
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-gray-100">
-        <div className="space-y-6">
-          <Link to="/">
-            <span className="font-heading font-medium italic text-white text-3xl">AVENTIS</span>
-          </Link>
-          <p className="text-xs text-white/60 leading-relaxed max-w-xs">
-            Trải nghiệm tinh hoa sang trọng với bộ sưu tập nước hoa cao cấp của chúng tôi. 
-            Được tạo ra cho những ai trân trọng vẻ đẹp vượt thời gian.
-          </p>
-          <div className="flex gap-3">
-            {['facebook', 'twitter', 'instagram', 'pinterest'].map((social) => (
-              <a key={social} href="#" className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-black hover:text-white transition-all text-white/60">
-                <i className={`fab fa-${social} text-xs`}></i>
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {footerLinks.map((column) => (
-          <div key={column.title}>
-            <h3 className="text-[11px] uppercase tracking-[0.2em] font-bold text-white mb-6">{column.title}</h3>
-            <ul className="space-y-3">
-              {column.links.map((link) => (
-                <li key={link.name}>
-                  <Link to={link.path} className="text-xs text-white/60 hover:text-black transition-colors">
-                    {link.name}
-                  </Link>
-                </li>
+      <div className="border-t border-white/5">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 py-7 grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="space-y-3">
+            <Link to="/">
+              <span className="font-heading font-medium text-white text-base tracking-[0.15em]">AVENTIS</span>
+            </Link>
+            <p className="text-[11px] text-white/35 leading-relaxed max-w-[200px]">
+              Trải nghiệm tinh hoa sang trọng với bộ sưu tập nước hoa cao cấp.
+            </p>
+            <div className="flex gap-2">
+              {['facebook', 'twitter', 'instagram', 'pinterest'].map((social) => (
+                <a key={social} href="#" className="w-7 h-7 rounded-full border border-white/10 flex items-center justify-center hover:border-[#F37021] hover:text-[#F37021] transition-all text-white/35">
+                  <i className={`fab fa-${social} text-[10px]`}></i>
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
-        ))}
+
+          {footerLinks.map((column) => (
+            <div key={column.title}>
+              <h3 className="text-[10px] uppercase tracking-[0.2em] font-medium text-white/60 mb-3">{column.title}</h3>
+              <ul className="space-y-2">
+                {column.links.map((link) => (
+                  <li key={link.name}>
+                    <Link to={link.path} className="text-[11px] text-white/35 hover:text-[#F37021] transition-colors">
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Copyright */}
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-[10px] text-white/40 uppercase tracking-[0.2em]">
-          &copy; 2026 Aventis Store. All rights reserved.
-        </p>
-        <div className="flex gap-6">
-          <Link to="/privacy" className="text-[10px] text-white/40 uppercase tracking-[0.2em] hover:text-white transition-colors">Privacy</Link>
-          <Link to="/terms" className="text-[10px] text-white/40 uppercase tracking-[0.2em] hover:text-white transition-colors">Terms</Link>
+      <div className="border-t border-white/5">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 py-4 flex flex-col md:flex-row justify-between items-center gap-2">
+          <p className="text-[10px] text-white/25 tracking-wide">
+            &copy; 2026 Aventis Store. All rights reserved.
+          </p>
+          <div className="flex gap-4">
+            <Link to="/privacy" className="text-[10px] text-white/25 hover:text-white/50 transition-colors">Privacy</Link>
+            <Link to="/terms" className="text-[10px] text-white/25 hover:text-white/50 transition-colors">Terms</Link>
+          </div>
         </div>
       </div>
     </footer>
